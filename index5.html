@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>My Scene</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script
+        src="https://unpkg.com/aframe-transparent-video-shader@1.0.6/dist/aframe-transparent-video-shader.umd.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <video id="videoId" muted loop playsinline webkit-playsinline>
+                <!-- HEVC video for safari support -->
+                <source src="assets/asset2.mp4" type="video/mp4;codecs=hvc1">
+                <!-- WEBM video for chrome and firefox -->
+                <source src="https://cdn.glitch.global/c83d9560-1d0e-424d-850d-3ea71b5fc570/soccer.webm?v=1580315641642"
+                    type="video/webm" />
+            </video>
+        </a-assets>
+
+        <a-entity material="shader: transparent-video; src: #videoId" geometry="primitive: plane;
+                  width: 1;
+                  height: 1.8" position="0 1 -2">
+        </a-entity>
+    </a-scene>
+</body>
+
+</html>
